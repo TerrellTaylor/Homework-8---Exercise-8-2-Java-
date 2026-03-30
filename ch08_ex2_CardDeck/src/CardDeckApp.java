@@ -1,3 +1,7 @@
+import java.util.Arrays;
+
+import com.sun.tools.javac.Main;
+
 public class CardDeckApp {
 
     public static void main(String[] args) {
@@ -18,11 +22,43 @@ public class CardDeckApp {
     private static String[] getDeck() {
         String[] deck = new String[52];
         // add code that creates deck here
+        String[] suites = new String[4];
+        suites[0] = "Spades";
+        suites[1] = "Hearts";
+        suites[2] = "Clubs";
+        suites[3] = "Diamonds";
+        String[] ranks = new String[13];
+        ranks[0] = "Ace";
+        ranks[1] = "2";
+        ranks[2] = "3";
+        ranks[3] = "4";
+        ranks[4] = "5";
+        ranks[5] = "6";
+        ranks[6] = "7";
+        ranks[7] = "8";
+        ranks[8] = "9";
+        ranks[9] = "10";
+        ranks[10] = "Jack";
+        ranks[11] = "Queen";
+        ranks[12] = "King";
+
+        int k = 0;
+        for (int i = 0; i < suites.length; i++) {
+            for (int j = 0; j < ranks.length; j++) {
+                deck[k] = (ranks[j] + " of " + suites[i]);
+                k++;
+            }
+        }
+
         return deck;
     }
 
     private static void displayCards(String[] cards) {
         // add code that displays cards here
+        for (String card : cards) {
+            System.out.print(card + "|");
+        }
+        System.out.println();
     }
 
     private static void shuffleDeck(String[] deck) {
