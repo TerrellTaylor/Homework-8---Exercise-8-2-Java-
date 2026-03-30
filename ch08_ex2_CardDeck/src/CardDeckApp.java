@@ -56,7 +56,7 @@ public class CardDeckApp {
     private static void displayCards(String[] cards) {
         // add code that displays cards here
         for (String card : cards) {
-            System.out.print(card + "|");
+            System.out.print("|" + card);
         }
         System.out.println();
     }
@@ -65,6 +65,7 @@ public class CardDeckApp {
         int randomIndex = (int) (Math.random() * deck.length-1);
         
         // add code that shuffles the deck here
+
     }
 
     private static String[] dealCards(String[] deck, int count) {
