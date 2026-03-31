@@ -63,13 +63,24 @@ public class CardDeckApp {
 
     private static void shuffleDeck(String[] deck) {
         int randomIndex = (int) (Math.random() * deck.length-1);
-        
-        // add code that shuffles the deck here
+        String temp = "";
 
+        // add code that shuffles the deck here
+        for (int i = 0; i < deck.length; i++) {
+            if (temp != deck[randomIndex]) {
+                temp = deck[i];
+                deck[i] = deck[randomIndex];
+                deck[randomIndex] = temp;
+                randomIndex = (int) (Math.random() * deck.length-1);
+            }
+        }
     }
 
     private static String[] dealCards(String[] deck, int count) {
         String[] hand = new String[count];
+        for (int i = 0; i < count; i++) {
+            hand[i] = deck[i];
+        }
         return hand;
     }
 }
